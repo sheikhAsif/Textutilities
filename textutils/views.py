@@ -63,6 +63,7 @@ def analyze(request):
         djtext = analyzed
 
     if (numberremover == "on"):
+        purpose = purpose +'|Number Remover|-'
         analyzed = ""
         numbers = '0123456789'
 
@@ -70,7 +71,7 @@ def analyze(request):
             if char not in numbers:
                 analyzed = analyzed + char
 
-        params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
+        params = {'purpose': purpose, 'analyzed_text': analyzed}
         djtext = analyzed
 
     if (charcounter == "on"):
